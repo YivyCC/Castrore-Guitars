@@ -1,0 +1,224 @@
+body{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  --second-color: #222125;
+  --accents-color: #C4DAD2;
+  --accents-hover: #a5c5b9;
+  --mid-tone: #141315; 
+  --third-color: #f7f8fa;
+  --main-font-color: #000000;
+  --main-back-color: #F0ECE5;
+  --main-font-fam: "PT Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--main-font-fam);
+}
+
+.body{
+  background-color: var(--main-back-color);
+}
+
+.header{
+  display: flex;
+  min-width: 100%;
+  height: 8dvh;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: var(--second-color);
+}
+
+.header__logo{
+  width: 10%;
+  height: 70%;
+  object-fit: contain;
+}
+
+.header__logo a{
+  max-width: 100%;
+  height: 100%;
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--accents-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__logo-image{
+  height: 100%;
+}
+
+.header__search-wrapper{
+  display: flex;
+  align-items: center;
+  width: clamp(200px, 60%, 1000px);
+}
+
+.header__search-input{
+  width:100%;
+}
+
+.header__search-input, .header__search-btn{
+  outline: none;
+  border: none;
+  padding: 10px;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+  font-family: var(--main-font-fam);
+  font-size: 1rem;
+}
+
+.header__search-wrapper:has(.header__search-input:focus){
+  outline: 3px solid var(--accents-hover);
+  border-radius: 4px;
+}
+
+.header__search-btn{
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+  width:45px;
+  min-height: 40px;
+  background-image: url("../Images/Header/search-icon.png");
+  background-position: center;
+  background-size:55%;
+  background-repeat: no-repeat;
+  background-color: var(--accents-color);
+  cursor: pointer;
+}
+
+.header__search-btn:hover{
+  background-color: var(--accents-hover);
+}
+
+.header__shopping-cart{
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.header__shopping-cart-logo{
+  width: 100%;
+}
+
+.header__shopping-cart-counter{
+  position: absolute;
+  translate: 0 -50%;
+  margin: 0;
+  color: var(--second-color);
+  font-weight: 600;
+}
+
+/* -- Main Content -- */
+.main{
+  width: clamp(300px, 70%, 1500px);
+}
+
+.main__grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 10px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.main__grid-element{
+  border: 1px solid #f5f5f5;
+  width: 100%;
+  margin: 0;
+  aspect-ratio: 0.6;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.main__image-container{
+  width: 100%;
+  height: 45%;
+  background-color: var(--third-color);
+}
+
+.main__item-image{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  mix-blend-mode: darken;
+  cursor: pointer;
+}
+
+.main__grid-element *:not(.main__image-container, .main__item-image){
+  margin-left: 10px;
+}
+
+.main__item-description{
+  margin-top: 10px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.main__item-description:hover{
+  color: var(--accents-hover);
+}
+
+.main__item-price{
+  font-weight: 600;
+  display: flex;
+  font-size: 1.3rem;
+  margin-top: 0;
+}
+
+.main__item-price > small{
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+
+.main__add-to-cart-btn{
+  border: none;
+  width: 40%;
+  padding: 8px 15px;
+  border-radius: 17px;
+  background-color: var(--accents-color);
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-family: var(--main-font-fam);
+}
+
+.main__add-to-cart-btn:hover{
+  background-color: var(--accents-hover);
+}
+
+.main__item-reverb-link{
+  margin-bottom: 10px;
+  font-size: 0.8rem;
+  text-decoration: none;
+  color: #FF6200;
+}
+
+.main__item-reverb-link:hover{
+  text-decoration: underline;
+}
+
+/* FOOTER */
+.footer{
+  width: 100%;
+  height: 10dvh;
+  background-color: var(--mid-tone);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.footer a{
+  color: var(--accents-color);
+}
