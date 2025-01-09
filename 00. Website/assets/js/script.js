@@ -3,31 +3,21 @@ const API_KEY = '8087b4cc3e1b804b54d42e652af6a0cd72921f818384e691edf9ee99088f64e
 
 // Function to fetch products
 async function fetchListings(searchTerm, url) {
-  const searchURL = `https://api.reverb.com/api/listings?&per_page=25&query=${encodeURIComponent(searchTerm)}`;
+  var searchURL = `https://api.reverb.com/api/listings?&per_page=25&query=${encodeURIComponent(searchTerm)}`;
   // const url = `https://api.reverb.com/api/listings/1234`; INDIVIDUAL SEARCH BY ID
+  
+  if (url) searchURL = url;
 
   try {
-    if (url) { // in case another URL is passed (prev/next page for example)
-      var response = await fetch(url, {
-        method: 'GET',
-        headers: {
-          'Authorization': `Bearer ${API_KEY}`,
-          'Content-Type': 'application/hal+json',
-          'Accept': 'application/hal+json',
-          'Accept-Version': '3.0',
-        },
-      });
-    } else{ // in case it requests by the regular search term
-      var response = await fetch(searchURL, {
-        method: 'GET',
-        headers: {
-          'Authorization': `Bearer ${API_KEY}`,
-          'Content-Type': 'application/hal+json',
-          'Accept': 'application/hal+json',
-          'Accept-Version': '3.0',
-        },
-      });
-    }
+    const response = await fetch(searchURL, {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${API_KEY}`,
+        'Content-Type': 'application/hal+json',
+        'Accept': 'application/hal+json',
+        'Accept-Version': '3.0',
+      },
+    });
 
     if (!response.ok) {
       throw new Error('Error fetching data:', response.statusText);
