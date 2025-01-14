@@ -4,10 +4,11 @@
   <meta charset="UTF-8">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/index.css">
   <link rel="icon" href="_images/electric-guitar-colored.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="js/index.js" defer></script>
   <title>Castrore Guitars</title>
 </head>
 <body>
@@ -28,9 +29,52 @@
     </a>
   </header>
   <main class="main">
-    <div class="main__grid">
+    <section class="main__hero-section">
+      <div>
+        <h1>Unleash Your Inner Musician</h1>
+        <p>Explore Our Exclusive Collection of Guitars and Gear</p>
+        <p>Start Your Journey with the Perfect Guitar Today!</p>
+        <a href="index.html">Shop Now</a>
+      </div>
+    </section>
+
+    <section class="main__popular">
+      <h2>Explore our top searched brands</h2>
+      <nav>
+        <a class="main__popular-item">
+          <figure>
+            <img src="_images/_un-optimized/fender-strat-cherry.webp" alt="Fender Stratocaster Cherry Red Guitar">
+            <figcaption class="brand">FENDER</figcaption>
+          </figure>
+        </a>
+        <a class="main__popular-item">
+          <figure>
+            <img src="_images/_un-optimized/bcrich-stealth.webp" alt="B.C. Rich Stealth Guitar">
+            <figcaption class="brand">B.C. RICH</figcaption>
+          </figure>
+        </a>
+        <a class="main__popular-item">
+          <figure>
+            <img src="_images/_un-optimized/guibson-lespaul.png" alt="Gibson Les Paul Guitar">
+            <figcaption class="brand">GIBSON</figcaption>
+          </figure>
+        </a>
+        <a class="main__popular-item">
+          <figure>
+            <img src="_images/_un-optimized/esp-guitar.webp" alt="ESP flying V Guitar">
+            <figcaption class="brand">ESP</figcaption>
+          </figure>
+        </a>
+      </nav>
+    </section>
+
+    <span class="main__searched-products">
+      <h2>Discover Our Extensive Collection of Quality Guitars at Unbeatable Prices</h2>
+      <div class="main__grid">
       
-    </div>
+      </div>
+    </span>
+    
 
     <nav aria-label="Pagination" class="main__pagination-nav">
       <ul class="main__pagination-list">
@@ -45,6 +89,5 @@
     <p>Yivy Store. All rights reserved.</p>
     <a href="https://www.flaticon.com/free-icons/guitar" title="guitar icons">Guitar icons created by Freepik - Flaticon</a>
   </footer>
-  <script src="js/script.js"></script>
 </body>
 </html>

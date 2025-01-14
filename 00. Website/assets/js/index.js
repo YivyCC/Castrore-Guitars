@@ -64,7 +64,8 @@ function displayPagination(prev, next, currentPage, totalPages){
     prevListHTMLElement.appendChild(newPrevBtn);
     newPrevBtn.addEventListener('click', () => {
       fetchListings('', prev);
-      window.scrollTo({top: 0, behavior: 'smooth'});
+      const elementPosition = mainGrid.getBoundingClientRect().top + window.scrollY -100;
+      window.scrollTo({top: elementPosition, behavior: 'smooth'});
     });
   } else {
     prevListHTMLElement.style.display = 'none';
@@ -78,7 +79,8 @@ function displayPagination(prev, next, currentPage, totalPages){
     nextListHTMLElement.appendChild(newNextBtn);
     newNextBtn.addEventListener('click', () => {
       fetchListings('', next);
-      window.scrollTo({top: 0, behavior: 'smooth'});
+      const elementPosition = mainGrid.getBoundingClientRect().top + window.scrollY - 100;
+      window.scrollTo({top: elementPosition, behavior: 'smooth'});
     });
   } else {
     nextListHTMLElement.style.display = 'none';
@@ -192,3 +194,13 @@ searchInput.addEventListener('keydown', (event) => {
   const searchBarVal = searchInput.value;
   if (event.key === 'Enter') fetchListings(searchBarVal);
 });
+
+const popularBrand = document.querySelectorAll('.brand');
+popularBrand.forEach((item) => {
+  item.addEventListener('click', () =>{
+    const brandSearch = item.innerText;
+    searchInput.value = brandSearch;
+    fetchListings(brandSearch);
+  });
+});
+

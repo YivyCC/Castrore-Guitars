@@ -1,5 +1,4 @@
 body{
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
   --second-color: #222125;
@@ -17,6 +16,10 @@ body{
   font-family: var(--main-font-fam);
 }
 
+* {
+  box-sizing: border-box !important;
+}
+
 .body{
   background-color: var(--main-back-color);
 }
@@ -28,6 +31,9 @@ body{
   justify-content: space-evenly;
   align-items: center;
   background-color: var(--second-color);
+  position: sticky;
+  top: 0;
+  z-index: 20;
 }
 
 .header__logo{
@@ -54,11 +60,16 @@ body{
 .header__search-wrapper{
   display: flex;
   align-items: center;
+  height: 40px;
   width: clamp(200px, 60%, 1000px);
 }
 
 .header__search-input{
   width:100%;
+  height: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  line-height: normal;
 }
 
 .header__search-input, .header__search-btn{
@@ -82,7 +93,7 @@ body{
   border-bottom-right-radius: 4px;
   border-top-right-radius: 4px;
   width:45px;
-  min-height: 40px;
+  min-height: 100%;
   background-image: url("../_images/_un-optimized/icons/search-icon.png");
   background-position: center;
   background-size:55%;
@@ -121,7 +132,7 @@ body{
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 4rem;
 }
 
 /* Hero Section */
@@ -141,7 +152,6 @@ body{
 .main__hero-section div{
   width: 70%;
   height: 70%;
-  box-sizing: border-box;
   padding: 20px;
   background: #00000096;
   border-radius: 2rem;
@@ -169,7 +179,70 @@ body{
   padding: 1rem;
 }
 
-/* Top shop items */
+/* Popular items */
+.main__popular{
+  width: clamp(300px, 70%, 1600px);
+}
+
+.main__popular nav{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.main__popular nav a{
+  width: 250px;
+  text-decoration: none;
+}
+
+.main__popular nav figure{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 0.6;
+  margin: 0;
+  box-shadow: 3px 3px 7px #00000022;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.main__popular nav figure img{
+  width: 100%;
+  object-fit: contain;
+  min-height: 90%;
+  padding: 10px;
+  z-index: 1;
+  background-color: #f6f6f6;
+  transition: transform 150ms linear;
+}
+
+.main__popular nav a:hover figure img{
+  transform: scale(1.2);
+}
+
+.main__popular nav figure figcaption{
+  width: 100%;
+  text-align: center;
+  font-family: var(--title-font-fam);
+  color: #000;
+  background-color: var(--accents-color);
+  font-size: 1.5rem;
+  padding: 10px;
+  transition: background-color 150ms linear;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.main__popular nav a:hover figure figcaption{
+  background-color: var(--accents-hover);
+}
+
+/* Search for products*/
+.main__searched-products{
+  width: clamp(300px, 70%, 1500px);
+}
 
 .main__grid{
   display: grid;
@@ -177,7 +250,7 @@ body{
   gap: 10px;
   justify-content: center;
   margin: 20px 0;
-  width: clamp(300px, 70%, 1500px);
+  width: 100%;
 }
 
 .main__grid-element{
