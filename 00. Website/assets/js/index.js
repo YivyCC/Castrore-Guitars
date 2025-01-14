@@ -192,6 +192,7 @@ searchInput.addEventListener('keydown', (event) => {
   if (event.key === 'Enter') fetchListings(searchBarVal);
 });
 
+// search for popular brands section
 const popularBrand = document.querySelectorAll('.brand');
 popularBrand.forEach((item) => {
   item.addEventListener('click', () =>{
@@ -205,7 +206,7 @@ popularBrand.forEach((item) => {
 const urlParams = new URLSearchParams(window.location.search);
 const searchQuery = urlParams.get('query');
 if (searchQuery){
-  fetchListings(searchQuery)
+  fetchListings(searchQuery);
 } else {  
     fetchListings('ESP guitars');
 }
