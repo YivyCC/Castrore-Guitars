@@ -1,27 +1,27 @@
-body{
-  margin: 0;
-  padding: 0;
+:root{
   --second-color: #222125;
   --accents-color: #C4DAD2;
   --accents-hover: #a5c5b9;
   --mid-tone: #141315; 
   --third-color: #f7f8fa;
   --main-font-color: #000000;
-  --main-back-color: #F0ECE5;
   --main-font-fam: "Roboto", serif;
   --title-font-fam: "Anton SC", serif;
+}
+
+body{
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   font-family: var(--main-font-fam);
+  background-color: #fff;
 }
 
 * {
   box-sizing: border-box !important;
-}
-
-.body{
-  background-color: var(--main-back-color);
 }
 
 .header{
@@ -111,6 +111,7 @@ body{
   height: 30px;
   display: flex;
   justify-content: center;
+  align-items: center;
   position: relative;
 }
 
@@ -120,9 +121,11 @@ body{
 
 .header__shopping-cart-counter{
   position: absolute;
-  translate: 0 -50%;
+  top: 2px;
+  left: 13px;
   margin: 0;
-  color: var(--second-color);
+  color: var(--main-font-color);
+  font-size: 0.8rem;
   font-weight: 600;
 }
 

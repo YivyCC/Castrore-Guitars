@@ -179,9 +179,6 @@ function deleteProducts(){
   }
 }
 
-// Display initial products for testing
-fetchListings('ESP guitars');
-
 // Search bar event listeners
 const searchBtn = document.querySelector('.header__search-btn');
 const searchInput = document.querySelector('.header__search-input');
@@ -204,3 +201,11 @@ popularBrand.forEach((item) => {
   });
 });
 
+// Display initial products for testing
+const urlParams = new URLSearchParams(window.location.search);
+const searchQuery = urlParams.get('query');
+if (searchQuery){
+  fetchListings(searchQuery)
+} else {  
+    fetchListings('ESP guitars');
+}
